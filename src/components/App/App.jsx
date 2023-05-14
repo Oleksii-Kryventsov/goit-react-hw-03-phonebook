@@ -24,7 +24,6 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevState) {
-
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
     }
@@ -50,8 +49,6 @@ export class App extends Component {
     }))
   };
 
-
-
   changeFilter = (event) => {
     this.setState({ filter: event.currentTarget.value })
   };
@@ -62,8 +59,6 @@ export class App extends Component {
     return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
   }
 
-
-  
   render() { 
 
     const visibleContacts = this.getVisibleContacts();
